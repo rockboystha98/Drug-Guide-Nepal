@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+/* Force gray text to be black across the app as requested unless in dark mode */
+:root:not(.dark) [class*="text-gray-"] { color: black !important; }
+:root:not(.dark) .text-black { color: black !important; }
+:root:not(.dark) [class*="text-[#202124]"] { color: black !important; }
+
+/* Primitive dark mode overrides */
+.dark, .dark * {
+  border-color: #374151 !important; /* tailwind gray-700 */
+}
+
+.dark {
+  background-color: #111827 !important; /* tailwind gray-900 */
+  color: #f3f4f6 !important; /* tailwind gray-100 */
+}
+
+/* Force backgrounds to go dark */
+.dark .bg-white, .dark .bg-gray-50, .dark .bg-gray-100 {
+  background-color: #1f2937 !important; /* tailwind gray-800 */
+}
+
+/* Make headers and text light */
+.dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6, 
+.dark p, .dark span, .dark div {
+  color: #f3f4f6 !important;
+}
+
+/* Except for specific elements we want to keep bright or colored */
+.dark .text-white {
+  color: #ffffff !important;
+}
+.dark .text-indigo-600 {
+  color: #818cf8 !important; /* tailwind indigo-400 */
+}
+.dark .text-[#005A9C] {
+  color: #60a5fa !important; /* tailwind blue-400 */
+}
+.dark .bg-[#005A9C] {
+  background-color: #1e3a8a !important; /* tailwind blue-900 */
+}

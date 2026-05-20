@@ -1,0 +1,121 @@
+import { DrugEntry } from '../../types/formulary';
+
+export const malignant7Drugs: DrugEntry[] = [
+  {
+    id: 'mal_052',
+    genericName: 'Bortezomib',
+    therapeuticClass: 'Targeted Therapy (Proteasome Inhibitor)',
+    categoryId: 'oncology',
+    indications: ['Multiple Myeloma', 'Mantle cell lymphoma'],
+    dosing: { adult: 'SC/IV: 1.3 mg/m² twice weekly for 2 weeks on, 1 week off.', pediatric: 'Rarely used.' },
+    safety: { adr: ['**Peripheral Neuropathy**', 'Thrombocytopenia', 'Herpes zoster reactivation'], contraindications: ['Hypersensitivity to boron'], pregnancyLactation: 'Category D.' },
+    handlingNote: 'Cytotoxic Handling Required. Fatal if given intrathecally.',
+    pharmacy: { strengths: ['2mg, 3.5mg vials'], dosageForms: ['Injection'], priceNPR: 'High cost', brandNames: ['Velcade', 'Bortecad'] },
+    notes: ['Acyclovir prophylaxis required to prevent shingles reactivation.'],
+    searchTags: ['Cancer', 'Targeted', 'Myeloma']
+  },
+  {
+    id: 'mal_053',
+    genericName: 'Cetuximab',
+    therapeuticClass: 'Targeted Therapy (Anti-EGFR Monoclonal Antibody)',
+    categoryId: 'oncology',
+    indications: ['KRAS wild-type Colorectal cancer', 'Head and neck squamous cell carcinoma'],
+    dosing: { adult: 'IV: 400 mg/m² initial, then 250 mg/m² weekly.', pediatric: 'Not established.' },
+    safety: { adr: ['**Severe infusion reactions**', 'Acneiform rash', 'Hypomagnesemia'], contraindications: ['KRAS mutant colorectal cancer (ineffective)'], pregnancyLactation: 'Category C.' },
+    handlingNote: 'Standard biologic handling.',
+    pharmacy: { strengths: ['100mg, 500mg vials'], dosageForms: ['Injection'], priceNPR: 'High cost', brandNames: ['Erbitux'] },
+    notes: ['Acne-like rash correlates strongly with positive clinical response to the drug.'],
+    searchTags: ['Cancer', 'Targeted', 'Head and neck']
+  },
+  {
+    id: 'mal_054',
+    genericName: 'Erlotinib',
+    therapeuticClass: 'Targeted Therapy (EGFR Tyrosine Kinase Inhibitor)',
+    categoryId: 'oncology',
+    indications: ['NSCLC (EGFR mutation positive)', 'Pancreatic cancer'],
+    dosing: { adult: 'PO: 150 mg daily 1 hour before or 2 hours after meals.', pediatric: 'Not established.' },
+    safety: { adr: ['Severe rash', 'Diarrhea', 'Interstitial lung disease'], contraindications: ['Severe hepatic impairment'], pregnancyLactation: 'Category D.' },
+    handlingNote: 'Cytotoxic Handling Required.',
+    pharmacy: { strengths: ['100mg, 150mg tab'], dosageForms: ['Tablet'], priceNPR: 'High cost', brandNames: ['Tarceva', 'Erlocip'] },
+    notes: ['Smoking decreases plasma levels significantly.'],
+    searchTags: ['Cancer', 'Targeted', 'Lung']
+  },
+  {
+    id: 'mal_055',
+    genericName: 'Gefitinib',
+    therapeuticClass: 'Targeted Therapy (EGFR Tyrosine Kinase Inhibitor)',
+    categoryId: 'oncology',
+    indications: ['NSCLC (EGFR mutation positive)'],
+    dosing: { adult: 'PO: 250 mg daily.', pediatric: 'Not established.' },
+    safety: { adr: ['Acneiform rash', 'Diarrhea', 'Hepatotoxicity'], contraindications: ['Severe hepatic impairment'], pregnancyLactation: 'Category D.' },
+    handlingNote: 'Cytotoxic Handling Required.',
+    pharmacy: { strengths: ['250mg tab'], dosageForms: ['Tablet'], priceNPR: 'High cost', brandNames: ['Iressa', 'Geftinat'] },
+    notes: ['Similar profile to Erlotinib, testing for EGFR exon 19 or 21 mutations required before use.'],
+    searchTags: ['Cancer', 'Targeted', 'Lung']
+  },
+  {
+    id: 'mal_056',
+    genericName: 'Nilotinib',
+    therapeuticClass: 'Targeted Therapy (BCR-ABL Tyrosine Kinase Inhibitor)',
+    categoryId: 'oncology',
+    indications: ['Chronic myeloid leukemia (CML) - Ph+'],
+    dosing: { adult: 'PO: 300-400 mg twice daily on an empty stomach.', pediatric: 'PO: Requires specific protocol.' },
+    safety: { adr: ['**QT Prolongation (Black box)**', 'Myelosuppression', 'Hepatotoxicity'], contraindications: ['Hypokalemia, hypomagnesemia, or long QT syndrome'], pregnancyLactation: 'Category D.' },
+    handlingNote: 'Cytotoxic Handling Required.',
+    pharmacy: { strengths: ['150mg, 200mg cap'], dosageForms: ['Capsule'], priceNPR: 'High cost', brandNames: ['Tasigna'] },
+    notes: ['Strictly on empty stomach (food increases absorption and toxicity).'],
+    searchTags: ['Cancer', 'Targeted', 'Leukemia']
+  },
+  {
+    id: 'mal_057',
+    genericName: 'Osimertinib',
+    therapeuticClass: 'Targeted Therapy (EGFR TKI - 3rd Generation)',
+    categoryId: 'oncology',
+    indications: ['NSCLC (EGFR T790M mutation positive or first line)'],
+    dosing: { adult: 'PO: 80 mg daily.', pediatric: 'Not established.' },
+    safety: { adr: ['Interstitial lung disease', 'QT prolongation', 'Cardiomyopathy'], contraindications: ['None specifically listed, use with caution'], pregnancyLactation: 'Category D.' },
+    handlingNote: 'Cytotoxic Handling Required.',
+    pharmacy: { strengths: ['40mg, 80mg tab'], dosageForms: ['Tablet'], priceNPR: 'High cost', brandNames: ['Tagrisso'] },
+    notes: ['Effective against the T790M resistance mutation common after first-generation TKI use.'],
+    searchTags: ['Cancer', 'Targeted', 'Lung']
+  },
+  {
+    id: 'mal_058',
+    genericName: 'Sunitinib',
+    therapeuticClass: 'Targeted Therapy (Multi-targeted TKI)',
+    categoryId: 'oncology',
+    indications: ['Renal cell carcinoma (advanced)', 'Gastrointestinal stromal tumor (GIST)'],
+    dosing: { adult: 'PO: 50 mg daily for 4 weeks on, 2 weeks off.', pediatric: 'Not established.' },
+    safety: { adr: ['Hepatotoxicity', 'Cardiovascular events', 'Skin discoloration/Hand-foot syndrome'], contraindications: ['Severe hepatic impairment'], pregnancyLactation: 'Category D.' },
+    handlingNote: 'Cytotoxic Handling Required.',
+    pharmacy: { strengths: ['12.5mg, 25mg, 50mg cap'], dosageForms: ['Capsule'], priceNPR: 'High cost', brandNames: ['Sutent', 'Sunitix'] },
+    notes: ['Monitor blood pressure and LFTs closely.'],
+    searchTags: ['Cancer', 'Targeted', 'Kidney']
+  },
+  {
+    id: 'mal_059',
+    genericName: 'Exemestane',
+    therapeuticClass: 'Aromatase Inhibitor (Steroidal)',
+    categoryId: 'oncology',
+    indications: ['Postmenopausal breast cancer (ER-positive)'],
+    dosing: { adult: 'PO: 25 mg daily after a meal.', pediatric: 'Not applicable.' },
+    safety: { adr: ['Hot flashes', 'Osteoporosis / Bone fractures', 'Joint pain'], contraindications: ['Premenopausal status unless on ovarian suppression', 'Pregnancy'], pregnancyLactation: 'Category X.' },
+    handlingNote: 'Standard handling.',
+    pharmacy: { strengths: ['25mg tab'], dosageForms: ['Tablet'], priceNPR: '25mg tab: ~150-200', brandNames: ['Aromasin', 'Exetraz'] },
+    notes: ['Irreversible aromatase inhibitor. Routine bone density scans needed.'],
+    searchTags: ['Cancer', 'Hormone', 'Breast']
+  },
+  {
+    id: 'mal_060',
+    genericName: 'Fulvestrant',
+    therapeuticClass: 'Estrogen Receptor Antagonist',
+    categoryId: 'oncology',
+    indications: ['Postmenopausal breast cancer (ER-positive, advanced)'],
+    dosing: { adult: 'IM: 500 mg slowly over 1-2 mins per buttock every 2 weeks x3, then monthly.', pediatric: 'Not applicable.' },
+    safety: { adr: ['Injection site pain/sciatica', 'Hot flashes', 'Hepatotoxicity'], contraindications: ['Severe hepatic impairment', 'Pregnancy'], pregnancyLactation: 'Category D.' },
+    handlingNote: 'Standard handling.',
+    pharmacy: { strengths: ['250mg/5ml PFS'], dosageForms: ['Injection'], priceNPR: 'High cost', brandNames: ['Faslodex'] },
+    notes: ['Must be given IM into gluteal muscle slowly.'],
+    searchTags: ['Cancer', 'Hormone', 'Breast']
+  }
+];

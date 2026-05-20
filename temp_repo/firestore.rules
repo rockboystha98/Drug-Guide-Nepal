@@ -1,0 +1,45 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // 0. Global Safety Net
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // 3. Primitive Definition
+    function isSignedIn() { return request.auth != null; }
+    function incoming() { return request.resource.data; }
+    function existing() { return resource.data; }
+
+    function isValidId(id) { 
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$'); 
+    }
+
+    function isOwner(uid) {
+      return isSignedIn() && request.auth.uid == uid;
+    }
+
+    function isValidUserEntity(data) {
+      return data.keys().hasAll(['role', 'email']) 
+             && data.keys().size() == 2
+             && data.role is string 
+             && data.role.size() <= 64
+             && data.email is string
+             && data.email.size() <= 256;
+    }
+
+    // Phase 4. Drafting Fortress Rules
+    match /users/{userId} {
+      allow get: if isOwner(userId) && isValidId(userId);
+      allow create: if isOwner(userId) 
+                    && isValidId(userId)
+                    && isValidUserEntity(incoming());
+      // The update rule allows users to change their role, and ensures email isn't modified
+      allow update: if isOwner(userId) 
+                    && isValidId(userId)
+                    && isValidUserEntity(incoming())
+                    && incoming().diff(existing()).affectedKeys().hasOnly(['role', 'email']);
+    }
+  }
+}

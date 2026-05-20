@@ -1,0 +1,6 @@
+{
+  "name": "Drug Guide: Nepal",
+  "description": "A comprehensive Android app version of the Drug guide: Nepal web application, allowing users to search and explore drug information.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
